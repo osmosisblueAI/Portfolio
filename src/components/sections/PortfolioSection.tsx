@@ -62,11 +62,11 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Nova Studios',
-    description: 'Portfolio website for a digital creative agency with dynamic project showcase, team profiles, and interactive case studies.',
+    title: 'Nova Tech',
+    description: 'AI-powered project management SaaS platform with intelligent task automation, predictive analytics, and team collaboration tools.',
     image: '/portfolio/nova-studios-screenshot.png',
-    tags: ['Creative Agency', 'Next.js', 'Framer Motion'],
-    link: '/projects/nova-studios',
+    tags: ['SaaS', 'AI', 'Next.js'],
+    link: '/projects/nova-tech',
     liveLink: 'https://nova-dntsbtsw0-osmosisblueais-projects.vercel.app/',
     type: 'image'
   }
