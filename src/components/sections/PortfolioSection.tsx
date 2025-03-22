@@ -52,11 +52,12 @@ const projects = [
   },
   {
     id: 4,
-    title: 'Eco Habitat',
-    description: 'Website for a sustainable architecture firm showcasing their eco-friendly projects and services.',
-    image: '/portfolio/eco-habitat.jpg',
-    tags: ['Corporate Site', 'WordPress', 'SEO'],
-    link: '#',
+    title: 'Verde Living',
+    description: 'Sustainable architecture firm website showcasing eco-friendly designs, services, and innovative green building solutions.',
+    image: '/portfolio/verde-living-screenshot.png',
+    tags: ['Architecture', 'Sustainability', 'Next.js'],
+    link: '/projects/verde-living',
+    liveLink: 'https://verde-vert.vercel.app/',
     type: 'image'
   },
   {
