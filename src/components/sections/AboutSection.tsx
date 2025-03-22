@@ -34,6 +34,7 @@ const AboutSection = () => {
                 fallbackSrc="/portfolio/lux-boutique.jpg"
                 alt="Luke Eddy - Web Developer & Designer"
                 fill
+                sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
                 priority
               />

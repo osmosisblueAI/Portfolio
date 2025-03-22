@@ -12,6 +12,8 @@ const FallbackImage = ({
   src,
   fallbackSrc = '/images/placeholder.jpg',
   alt,
+  fill,
+  sizes,
   ...rest
 }: FallbackImageProps) => {
   const [imgSrc, setImgSrc] = useState(src);
@@ -38,6 +40,17 @@ const FallbackImage = ({
     return colors[Math.abs(hash) % colors.length];
   };
 
+  // If fill is true but sizes is not provided, add a default sizes value
+  const imageProps = {
+    src: imgSrc,
+    alt: alt || '',
+    onError: handleError,
+    ...(fill && !sizes ? { sizes: '100vw' } : {}),
+    fill,
+    sizes,
+    ...rest
+  };
+
   return (
     <>
       {hasError ? (
@@ -52,10 +65,7 @@ const FallbackImage = ({
         </div>
       ) : (
         <Image
-          src={imgSrc}
-          alt={alt || ''}
-          onError={handleError}
-          {...rest}
+          {...imageProps}
         />
       )}
     </>
