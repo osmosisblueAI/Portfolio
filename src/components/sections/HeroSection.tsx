@@ -32,9 +32,28 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-zinc-900 flex items-center justify-center">
-      {/* Background elements with parallax effect */}
-      <div className="absolute inset-0">
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
+      {/* Background elements with gradient and particles */}
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-900 via-zinc-900 to-black">
+        {/* Grid lines */}
+        <div 
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'linear-gradient(#00aaff 1px, transparent 1px), linear-gradient(90deg, #00aaff 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
+            backgroundPosition: '-1px -1px',
+            perspective: '1000px',
+            transformStyle: 'preserve-3d',
+            transform: 'rotateX(60deg) translateY(-20%) translateZ(-100px)',
+          }}
+        />
+      
+        {/* Static colored circles/orbs */}
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-blue-500/10 blur-3xl mix-blend-screen"></div>
+        <div className="absolute top-1/2 right-1/4 w-80 h-80 rounded-full bg-purple-500/10 blur-3xl mix-blend-screen"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-72 h-72 rounded-full bg-yellow-500/10 blur-3xl mix-blend-screen"></div>
+      
+        {/* 3D canvas - still try to load it */}
         {isMounted && (
           <div className="absolute inset-0 z-10">
             <GlobeCanvas />
@@ -105,8 +124,12 @@ const HeroSection = () => {
             </motion.div>
           </div>
           
-          {/* Empty space for the globe canvas */}
-          <div className="hidden lg:block h-full"></div>
+          {/* Empty space for the globe canvas but with a visible element */}
+          <div className="hidden lg:block h-full relative">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-64 h-64 rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 filter blur-md"></div>
+            </div>
+          </div>
         </div>
       </div>
       
