@@ -62,11 +62,12 @@ const projects = [
   },
   {
     id: 6,
-    title: 'Creative Studios',
-    description: 'Portfolio website for a digital creative agency with dynamic project showcase and case studies.',
-    image: '/portfolio/creative-studios.jpg',
-    tags: ['Portfolio', 'Gatsby', 'GraphQL'],
-    link: '#',
+    title: 'Nova Studios',
+    description: 'Portfolio website for a digital creative agency with dynamic project showcase, team profiles, and interactive case studies.',
+    image: '/portfolio/nova-studios-screenshot.png',
+    tags: ['Creative Agency', 'Next.js', 'Framer Motion'],
+    link: '/projects/nova-studios',
+    liveLink: 'https://nova-dntsbtsw0-osmosisblueais-projects.vercel.app/',
     type: 'image'
   }
 ];
