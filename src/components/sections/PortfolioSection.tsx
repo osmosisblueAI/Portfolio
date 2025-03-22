@@ -64,7 +64,7 @@ const projects = [
     id: 6,
     title: 'Nova Tech',
     description: 'AI-powered project management SaaS platform with intelligent task automation, predictive analytics, and team collaboration tools.',
-    image: '/portfolio/nova-studios-screenshot.png',
+    image: '/portfolio/nova-tech-screenshot.png',
     tags: ['SaaS', 'AI', 'Next.js'],
     link: '/projects/nova-tech',
     liveLink: 'https://nova-dntsbtsw0-osmosisblueais-projects.vercel.app/',
