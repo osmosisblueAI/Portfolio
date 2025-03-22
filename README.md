@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Luke Eddy Portfolio
+
+A professional portfolio website for Luke Eddy, showcasing web design and development services with a sleek, dark-themed design.
+
+## Features
+
+- **Responsive Design**: Fully responsive, mobile-first design that looks great on all devices
+- **Modern UI**: Sleek dark theme with gold accents and subtle animations
+- **Interactive 3D Elements**: Three.js-powered 3D globe in the hero section
+- **Interactive Project Estimator**: Clients can estimate project costs
+- **Contact Form**: Integrated contact form with validation and server-side handling
+- **Animations**: Smooth animations and transitions using Framer Motion
+- **Performance Optimized**: Fast loading times and optimal performance
+
+## Tech Stack
+
+- **Frontend**:
+  - Next.js (App Router)
+  - TypeScript
+  - Tailwind CSS
+  - Framer Motion
+  - Three.js / React Three Fiber
+  - React Hook Form
+
+- **Backend**:
+  - Next.js API Routes
+  - Nodemailer (for contact form)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- Node.js 18+ and npm/yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/yourusername/luke-eddy-portfolio.git
+   cd luke-eddy-portfolio
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
+
+3. Run the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Environment Variables
+
+For a production deployment with a working contact form, create a `.env.local` file with the following:
+
+```
+EMAIL_HOST=your-smtp-server.com
+EMAIL_PORT=587
+EMAIL_SECURE=false
+EMAIL_USER=your-email@example.com
+EMAIL_PASSWORD=your-password
+EMAIL_FROM=contact@luke-eddy.com
+EMAIL_TO=your-email@example.com
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project can be easily deployed on Vercel:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push your code to GitHub
+2. Import the project in Vercel
+3. Add environment variables
+4. Deploy
 
-## Learn More
+## Customization
 
-To learn more about Next.js, take a look at the following resources:
+### Updating Portfolio Projects
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Edit the project data in `src/components/sections/PortfolioSection.tsx` to add your own projects.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Changing Colors
 
-## Deploy on Vercel
+Modify the color scheme in `src/app/globals.css` by updating the CSS variables in the `:root` selector.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Adding Real Images
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Add portfolio images to the `public/portfolio` directory and update the image paths in the components.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Design inspiration from modern portfolio trends
+- Icons from Heroicons

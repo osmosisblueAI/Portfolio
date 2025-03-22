@@ -1,26 +1,440 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #121212;
+  --foreground: #f8f8f8;
+  --primary: #ffd700;
+  --secondary: #0077ff;
+  --accent: #ffc107;
+  --card-bg: #222222;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --nav-bg: rgba(18, 18, 18, 0.8);
+  --section-alt-bg: #1a1a1a;
+  --card-highlight: rgba(255, 255, 255, 0.1);
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 18, 18, 18;
+  --background-end-rgb: 12, 12, 12;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.light-theme {
+  --background: #f8f8f8;
+  --foreground: #222222;
+  --primary: #ffd700;
+  --secondary: #0077ff;
+  --accent: #ff6b6b;
+  --card-bg: #ffffff;
+  --card-border: #e5e7eb;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --section-alt-bg: #eaeaea;
+  --card-highlight: rgba(255, 215, 0, 0.15);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)];
+    font-family: 'Montserrat', 'Poppins', sans-serif;
+    transition: background-color 0.3s ease-out;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+      to bottom,
+      rgb(var(--background-start-rgb)),
+      rgb(var(--background-end-rgb))
+    );
+    overflow-x: hidden;
+  }
+
+  .light-theme body {
+    @apply bg-[#f8f8f8] text-[#121212];
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold;
+  }
+  
+  .font-vt323 {
+    font-family: var(--font-vt323);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .hero-button {
+    @apply px-6 py-3 bg-primary text-[#121212] font-semibold rounded-md hover:bg-opacity-90 transition-all shadow-lg;
+    background: linear-gradient(90deg, rgba(255, 85, 0, 0.7), rgba(255, 215, 0, 0.7));
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 20px rgba(255, 85, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    box-shadow: 0 6px 25px rgba(255, 85, 0, 0.5);
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-8 relative;
+  }
+  
+  .section-heading::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-16 h-1 bg-primary mt-2;
+  }
+  
+  .card {
+    @apply bg-[var(--card-bg)] p-6 rounded-lg shadow-lg border border-[var(--card-border)] hover:border-primary transition-all duration-300;
+  }
+
+  .light-theme .card {
+    @apply bg-white p-6 rounded-lg shadow-lg border border-gray-200 hover:border-primary transition-all duration-300;
+  }
+  
+  .nav-link {
+    @apply relative text-[var(--foreground)] hover:text-primary transition-colors duration-300;
+  }
+
+  .light-theme .nav-link {
+    @apply relative text-[#121212] hover:text-primary transition-colors duration-300;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  /* Alternate section backgrounds for visual interest */
+  .bg-section-alt {
+    @apply bg-[var(--section-alt-bg)];
+  }
+
+  /* Header styles with backdrop blur */
+  .header-bg {
+    @apply bg-[var(--nav-bg)] backdrop-blur-sm;
+  }
+
+  /* Interactive light particles */
+  .light-particles {
+    position: absolute;
+    pointer-events: none;
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    filter: blur(3px);
+    z-index: 10;
+  }
+
+  .light-particles::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+      0 0 10px 2px rgba(255, 215, 0, 0.8),
+      0 0 20px 5px rgba(255, 85, 0, 0.4);
+    animation: pulse 2s infinite;
+  }
+
+  .light-particles::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 215, 0, 0.15) 0%,
+      rgba(255, 85, 0, 0.1) 30%,
+      transparent 70%
+    );
+    border-radius: 50%;
+    opacity: 0.4;
+    animation: pulse 3s infinite alternate;
+  }
+
+  @keyframes pulse {
+    0% {
+      opacity: 0.2;
+      transform: scale(0.8) translate(-60%, -60%);
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 0.2;
+      transform: scale(1.2) translate(-40%, -40%);
+    }
+  }
+
+  @keyframes audio-pulse {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.8);
+    }
+  }
+
+  @keyframes audio-pulse-slow {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(1.5);
+    }
+  }
+
+  @keyframes audio-pulse-slower {
+    0%, 100% {
+      transform: scaleY(1);
+    }
+    50% {
+      transform: scaleY(2.2);
+    }
+  }
+
+  .animate-pulse {
+    animation: audio-pulse 1s infinite ease-in-out;
+  }
+
+  .animate-pulse-slow {
+    animation: audio-pulse-slow 1.3s infinite ease-in-out;
+  }
+
+  .animate-pulse-slower {
+    animation: audio-pulse-slower 1.7s infinite ease-in-out;
+  }
+
+  /* 3D sphere animation effects */
+  .sphere-glow {
+    filter: blur(40px);
+    opacity: 0.5;
+    mix-blend-mode: screen;
+    pointer-events: none;
+  }
+
+  /* Parallax floating effect */
+  .float-parallax {
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .dark-glassmorphism {
+    background: rgba(18, 18, 18, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(18, 18, 18, 0.7);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 85, 0, 0.7),
+      rgba(255, 215, 0, 0.7)
+    );
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 115, 30, 0.9),
+      rgba(255, 225, 30, 0.9)
+    );
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary;
+    background: linear-gradient(
+      90deg,
+      #ff5500,
+      #ffd700,
+      #00aaff,
+      #ff5500
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 300% 300%;
+  }
+
+  /* Glass effect for light theme modals */
+  .light-theme .glass-effect {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  /* Glass effect for dark theme modals */
+  .glass-effect {
+    @apply bg-black/30 backdrop-blur-md border border-white/10;
+  }
+  
+  .parallax-float {
+    transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+  }
+  
+  .light-particles {
+    background-image: radial-gradient(circle, rgba(255, 215, 0, 0.3) 10%, transparent 70%);
+    filter: blur(3px);
+  }
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Theme transition animation */
+.theme-transition {
+  transition: color 0.5s ease, background-color 0.5s ease;
+}
+
+/* Shadow variations by theme */
+.light-theme .elevated {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.elevated {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced 3D Effect Animations */
+@keyframes pulse-glow {
+  0% {
+    filter: drop-shadow(0 0 5px var(--primary));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px var(--primary));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px var(--primary));
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-spheres {
+  position: relative;
+}
+
+.floating-spheres::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  opacity: 0.3;
+  animation: float 8s ease-in-out infinite;
+}
+
+/* Luxe Boutique Styles */
+.font-montserrat {
+  font-family: var(--font-montserrat);
+}
+
+.luxe-boutique-hero {
+  background-color: #000;
+  background-image: radial-gradient(circle at 25% 25%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+  position: relative;
+}
+
+.luxe-boutique-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+  pointer-events: none;
+}
+
+.animate-glow {
+  animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes luxe-hover {
+  0% {
+    transform: translateY(0);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.2);
+  }
+  100% {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+  }
+}
+
+.luxe-hover {
+  transition: all 0.3s ease;
+}
+
+.luxe-hover:hover {
+  animation: luxe-hover 0.3s forwards;
+}
+
+/* Custom scrollbar for Luxe Boutique */
+.luxe-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.luxe-scrollbar::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+.luxe-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(212, 175, 55, 0.5);
+  border-radius: 3px;
+}
+
+.luxe-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(212, 175, 55, 0.8);
 }
