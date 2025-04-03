@@ -22,7 +22,7 @@ const defaultItems: ParallaxItem[] = [
     id: 1,
     title: "Immersive Experiences",
     description: "Creating digital journeys that captivate and inspire through innovative design and technology.",
-    image: "/images/parallax/immersive.jpg",
+    image: "/images/parallax/target-bullseye.png",
     color: "#ff5500"
   },
   {
