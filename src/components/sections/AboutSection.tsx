@@ -30,7 +30,7 @@ const AboutSection = () => {
           >
             <div className="relative h-[500px] w-full rounded-2xl overflow-hidden">
               <FallbackImage
-                src="/portfolio/bio-image.jpg"
+                src="/images/bio-image.JPG"
                 fallbackSrc="/portfolio/lux-boutique.jpg"
                 alt="Luke Eddy - Web Developer & Designer"
                 fill
