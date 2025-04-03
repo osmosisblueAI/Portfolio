@@ -22,28 +22,28 @@ const defaultItems: ParallaxItem[] = [
     id: 1,
     title: "Immersive Experiences",
     description: "Creating digital journeys that captivate and inspire through innovative design and technology.",
-    image: "/images/parallax/target-bullseye.png",
+    image: "/images/parallax/immersive.png",
     color: "#ff5500"
   },
   {
     id: 2,
     title: "Cutting-Edge Development",
     description: "Building with next-generation frameworks and tools to deliver exceptional performance.",
-    image: "/images/parallax/development.jpg",
+    image: "/images/parallax/development.png",
     color: "#00aaff"
   },
   {
     id: 3,
     title: "Creative Design Solutions",
     description: "Transforming complex problems into elegant, intuitive interfaces that users love.",
-    image: "/images/parallax/design.jpg",
+    image: "/images/parallax/design.png",
     color: "#44ff00"
   },
   {
     id: 4,
     title: "Results-Driven Strategy",
     description: "Crafting digital solutions that not only look amazing but deliver measurable business outcomes.",
-    image: "/images/parallax/strategy.jpg",
+    image: "/images/parallax/strategy.png",
     color: "#ffaa00"
   }
 ];
