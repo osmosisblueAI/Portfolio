@@ -24,11 +24,12 @@ const projects = [
   },
   {
     id: 1,
-    title: 'E-commerce Dashboard',
-    description: 'Responsive admin dashboard for managing inventory, sales, and customer data.',
-    image: '/portfolio/techtrend.jpg',
-    tags: ['React', 'TypeScript', 'Node.js'],
-    link: '/projects/e-commerce-dashboard',
+    title: 'HellzDelz Dog Training',
+    description: 'Professional website for a dog training business with service listings, testimonials, and contact information.',
+    image: '/portfolio/hellz-delz-screenshot.png',
+    tags: ['Next.js', 'React', 'Tailwind CSS', 'Responsive Design'],
+    link: '/projects/hellz-delz',
+    liveLink: 'https://hellzdelz.com',
     type: 'image'
   },
   {
