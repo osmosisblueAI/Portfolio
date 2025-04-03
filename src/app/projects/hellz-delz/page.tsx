@@ -77,15 +77,12 @@ export default function HellzDelzProject() {
         <div className="space-y-12">
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center">
-              <FaRobot className="mr-3 text-blue-400" />
+              <FaDog className="mr-3 text-blue-400" />
               Project Overview
             </h2>
             <div className="prose prose-lg max-w-none text-gray-300">
               <p>
-                HellzDelz Dog Training is an AI-powered project management platform designed to transform how teams organize, 
-                prioritize, and execute their work. The project focused on creating an intelligent system that 
-                can learn from team behaviors and project patterns to provide actionable insights and automate 
-                routine tasks.
+                HellzDelz.com is a professional website for a dog training business based in Cleveland, Ohio. The site serves as an online presence for the business, allowing potential clients to learn about their services, read testimonials, and easily get in touch.
               </p>
               <p>
                 The platform features an intuitive interface where users can create projects, assign tasks, and 
@@ -128,7 +125,7 @@ export default function HellzDelzProject() {
 
           <section>
             <h2 className="text-2xl font-bold mb-4 flex items-center">
-              <FaBrain className="mr-3 text-blue-400" />
+              <FaPaw className="mr-3 text-blue-400" />
               AI Implementation
             </h2>
             <div className="prose prose-lg max-w-none text-gray-300">
@@ -180,3 +177,5 @@ export default function HellzDelzProject() {
     </ProjectLayout>
   );
 } 
+
+
